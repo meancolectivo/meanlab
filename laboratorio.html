@@ -18,8 +18,8 @@
   --cream:#FFF8D4;
   --sage:#5C806A;
   --coral:#FF806C;
-  --ink-soft:rgba(70,2,89,.62);
-  --edge:rgba(70,2,89,.22);
+  --ink-soft:rgba(20,28,52,.62);
+  --edge:rgba(20,28,52,.22);
   --cream-soft:rgba(255,248,212,.82);
   --cream-line:rgba(255,248,212,.3);
   --display:"Nippo","Trebuchet MS",sans-serif;
@@ -76,7 +76,7 @@ header{position:sticky;top:0;z-index:60;background:var(--ink);
 .wrap{max-width:var(--max);margin:0 auto}
 section{padding:clamp(52px,6.6vw,104px) var(--pad)}
 .kicker{font-family:var(--display);font-size:12px;letter-spacing:.28em;text-transform:uppercase;
-  color:rgba(70,2,89,.45);display:block;margin-bottom:16px}
+  color:rgba(20,28,52,.45);display:block;margin-bottom:16px}
 .dark .kicker{color:var(--cream-soft)}
 .out{-webkit-text-stroke:1.4px var(--ink);color:transparent}
 .dark .out{-webkit-text-stroke:1.4px var(--cream)}
@@ -166,14 +166,16 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
 .mini h3{font-size:clamp(19px,2vw,24px);margin-bottom:12px}
 .mini p{margin:0;color:var(--ink-soft);font-size:15px}
 
-.hilo{position:relative;height:1180px;margin-top:clamp(16px,2.4vw,36px)}
+.hilo{position:relative;height:1820px;margin-top:clamp(16px,2.4vw,36px)}
+.hilo-icon{position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;
+  width:48px;height:48px;background:var(--cream);z-index:3}
 .hilo svg{position:absolute;inset:0;width:100%;height:100%}
 .hilo path{fill:none;stroke:var(--coral);stroke-width:3;vector-effect:non-scaling-stroke}
 .punto{position:absolute;width:20px;height:20px;border-radius:50%;background:var(--ink);
-  transform:translate(-50%,-50%);transition:background .35s,transform .35s}
-.term{position:absolute;max-width:400px;transition:transform .4s cubic-bezier(.2,.8,.3,1)}
+  transform:translate(-50%,-50%);transition:background .35s,transform .35s;z-index:2}
+.term{position:absolute;max-width:360px;transition:transform .4s cubic-bezier(.2,.8,.3,1);z-index:1}
 .term h3{font-size:clamp(20px,2.2vw,27px);margin-bottom:10px}
-.term p{margin:0;font-size:15px;color:var(--ink-soft);max-width:38ch}
+.term p{margin:0;font-size:15px;color:var(--ink-soft);max-width:36ch}
 .term:hover{transform:translateX(6px)}
 .term:hover p{color:var(--ink)}
 .term{opacity:0;transition:opacity .5s ease,transform .4s cubic-bezier(.2,.8,.3,1)}
@@ -184,20 +186,21 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
   max-width:1020px;margin:0 auto;text-align:center}
 .retrato{position:relative;width:clamp(180px,24vw,280px);aspect-ratio:1;border-radius:50%;
   margin:0 auto 26px;overflow:hidden}
-.lideres h3{font-size:clamp(20px,2.2vw,27px)}
+.retrato img,.colabs .circ img{width:100%;height:100%;object-fit:cover;display:block}
+.lideres h3{font-size:clamp(20px,2.2vw,27px);margin-bottom:14px}
 .lideres em{font-family:var(--display);font-style:normal;font-size:11.5px;letter-spacing:.2em;
   text-transform:uppercase;color:var(--coral);display:block;margin:10px 0 14px}
 .lideres p{margin:0 auto;max-width:40ch;font-size:15px;color:var(--ink-soft)}
 .ph{border-bottom:1.5px dashed var(--edge)}
 
 .colabs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,50px);
-  max-width:1020px}
+  max-width:1020px;margin:0 auto}
 .colabs article{text-align:center}
+.colabs h3{font-size:17px;font-weight:500;margin:18px 0 6px}
 .colabs .circ{aspect-ratio:1;border:1px solid var(--edge);border-radius:50%;display:grid;
   place-items:center;background:#fff;margin-bottom:20px;font-family:var(--display);
   font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);
   position:relative;overflow:hidden;transition:border-color .3s,transform .4s cubic-bezier(.2,.8,.3,1)}
-.colabs .circ span{position:relative}
 .colabs .circ .tex{opacity:0;transition:opacity .4s;background:var(--sage)}
 .colabs article:hover .circ{border-color:var(--sage);transform:translateY(-5px)}
 .colabs article:hover .circ .tex{opacity:.3}
@@ -222,7 +225,7 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
 .tl-hint{font-size:13px;color:var(--cream-soft);margin:14px 0 0}
 @media(max-width:1000px){
   .tres,.colabs{grid-template-columns:1fr}
-  .colabs{max-width:420px}
+  .colabs{max-width:420px;margin:0 auto}
   .lideres{grid-template-columns:1fr}
   .hilo{display:none}
   .hilo-lista{display:block;border-left:1.5px solid var(--edge);padding-left:26px;margin-top:24px}
@@ -245,8 +248,8 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
     <a class="lnk" href="proyectos.html">Proyectos</a>
     <a class="lnk" href="novedades.html">Novedades</a>
     <a class="cta" href="co-incidir.html">Co-incidir</a>
-    <a class="ico" href="mailto:hola@meanlab.co" aria-label="Escríbenos"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
-    <a class="ico" href="https://instagram.com" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
+    <a class="ico" href="mailto:meancolectivo@gmail.com" aria-label="Escríbenos"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+    <a class="ico" href="https://www.instagram.com/lab_mean/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
     <button class="navtoggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
   </nav>
 </header>
@@ -258,34 +261,20 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
       <span class="kicker">Laboratorio</span>
       <h1>¿Qué es<br><span class="out">MEAN lab</span> ?</h1>
     </div>
-    <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo magna
-      quis erat maximus pulvinar. Morbi interdum lorem nisl, sed maximus nulla egestas sed. Proin
-      laoreet nulla in odio suscipit, id semper odio pretium.</p>
+    <p class="lede">MEAN es un laboratorio que une Medicina, Ingeniería, Artes y Neurociencia para hacer
+      visible lo que pasa en el cuerpo sin notarlo. Nos preguntamos cómo se ve una emoción, cómo suena
+      un estado mental o qué ocurre en el cerebro cuando dos personas se conectan. Ninguna disciplina
+      responde sola esas preguntas, por eso integramos el rigor científico, las herramientas de la
+      ingeniería y el lenguaje del arte.</p>
   </div>
 </div>
-
-<section class="paper">
-  <div class="wrap">
-    <div class="rv" style="margin-bottom:clamp(30px,4vw,56px)">
-      <span class="kicker">Alcances</span>
-      <h2 class="big">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-    </div>
-    <div class="tres">
-      <div class="mini rv"><b>Alcance</b><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></div>
-      <div class="mini rv"><b>Alcance</b><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></div>
-      <div class="mini rv"><b>Alcance</b><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></div>
-    </div>
-  </div>
-</section>
 
 <section class="cream" style="position:relative;overflow:hidden">
   <div class="tex tex-mesh" style="background:var(--ink);opacity:.16"></div>
   <div class="wrap" style="position:relative">
     <div class="head2 rv">
-      <div><span class="kicker">Vocabulario</span>
-        <h2 class="big">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2></div>
-      <p>Instrucción. Curabitur consectetur fringilla nunc a rhoncus. Vivamus faucibus at lectus a
-        fringilla. Curabitur eget ligula at felis consequat auctor sed vitae eros.</p>
+      <div><span class="kicker">Conceptos</span>
+        <h2 class="big">El vocabulario detrás de lo invisible</h2></div>
     </div>
     <div class="hilo rv" id="hilo-wrap">
       <svg viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true">
@@ -293,23 +282,39 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
           C 420,420 300,360 180,470 C 90,555 260,600 540,620 C 700,632 640,700 300,782
           C 170,812 80,830 0,838"/>
       </svg>
-      <article class="term" data-lado="der" data-t=".09"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <div class="hilo-icon" id="iconoInicio" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <circle cx="20" cy="13" r="7" fill="var(--ink)"/>
+          <path d="M6 34c0-9 6-15 14-15s14 6 14 15" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <article class="term" data-lado="der" data-t=".161"><h3>Señal biológica</h3><p>Información que produce el cuerpo de forma constante, como la actividad del cerebro, los latidos del corazón o el movimiento. Son datos que normalmente no percibimos, pero que pueden medirse, registrarse y traducirse en información. Se obtienen con herramientas como EEG, EMG, ECG y pose tracking.</p></article>
       <span class="punto"></span>
-      <article class="term" data-lado="der" data-t=".31"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <article class="term" data-lado="izq" data-t=".238" data-dx="24" data-dy="-56"><h3>Interfaz cerebro-computador (BCI)</h3><p>Tecnología que establece una comunicación directa entre el cerebro y una máquina. Lee la actividad cerebral, la interpreta y la convierte en una señal que un computador puede usar.</p></article>
       <span class="punto"></span>
-      <article class="term" data-lado="izq" data-t=".47"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <article class="term" data-lado="der" data-t=".426"><h3>Música generativa</h3><p>Música que se crea en el momento a partir de datos o reglas, en lugar de estar compuesta de antemano. En MEAN lab, esos datos son las ondas cerebrales registradas con EEG, de modo que el sonido cambia según la actividad cerebral de una persona.</p></article>
       <span class="punto"></span>
-      <article class="term" data-lado="der" data-t=".66"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <article class="term" data-lado="izq" data-t=".549"><h3>Neurofeedback</h3><p>Proceso en el que una persona recibe información de su propia actividad cerebral en tiempo real, viéndola o escuchándola, y aprende poco a poco a regularla. Es entrenar el cerebro observándose a sí mismo.</p></article>
       <span class="punto"></span>
-      <article class="term" data-lado="izq" data-t=".87"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <article class="term" data-lado="izq" data-t=".793"><h3>Sincronización</h3><p>Fenómeno en el que dos o más personas alinean, sin proponérselo, su actividad cerebral o corporal al compartir una experiencia como escuchar la misma música, moverse juntas o prestar atención a lo mismo. Es una de las formas en que el cuerpo revela cómo nos conectamos con los otros.</p></article>
       <span class="punto"></span>
+      <div class="hilo-icon" id="iconoFin" aria-hidden="true">
+        <svg viewBox="0 0 64 40" width="52" height="34">
+          <circle cx="32" cy="10" r="6" fill="var(--sage)"/>
+          <path d="M20 32c0-7 5-12 12-12s12 5 12 12" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <circle cx="14" cy="13" r="5" fill="var(--coral)" opacity=".85"/>
+          <path d="M4 32c0-6 4.5-10.5 10-10.5" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".85"/>
+          <circle cx="50" cy="13" r="5" fill="var(--coral)" opacity=".85"/>
+          <path d="M60 32c0-6-4.5-10.5-10-10.5" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".85"/>
+        </svg>
+      </div>
     </div>
     <div class="hilo-lista">
-      <article><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
-      <article><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
-      <article><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
-      <article><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
-      <article><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p></article>
+      <article><h3>Señal biológica</h3><p>Información que produce el cuerpo de forma constante, como la actividad del cerebro, los latidos del corazón o el movimiento. Son datos que normalmente no percibimos, pero que pueden medirse, registrarse y traducirse en información. Se obtienen con herramientas como EEG, EMG, ECG y pose tracking.</p></article>
+      <article><h3>Interfaz cerebro-computador (BCI)</h3><p>Tecnología que establece una comunicación directa entre el cerebro y una máquina. Lee la actividad cerebral, la interpreta y la convierte en una señal que un computador puede usar.</p></article>
+      <article><h3>Música generativa</h3><p>Música que se crea en el momento a partir de datos o reglas, en lugar de estar compuesta de antemano. En MEAN lab, esos datos son las ondas cerebrales registradas con EEG, de modo que el sonido cambia según la actividad cerebral de una persona.</p></article>
+      <article><h3>Neurofeedback</h3><p>Proceso en el que una persona recibe información de su propia actividad cerebral en tiempo real, viéndola o escuchándola, y aprende poco a poco a regularla. Es entrenar el cerebro observándose a sí mismo.</p></article>
+      <article><h3>Sincronización</h3><p>Fenómeno en el que dos o más personas alinean, sin proponérselo, su actividad cerebral o corporal al compartir una experiencia como escuchar la misma música, moverse juntas o prestar atención a lo mismo. Es una de las formas en que el cuerpo revela cómo nos conectamos con los otros.</p></article>
     </div>
   </div>
 </section>
@@ -318,20 +323,20 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
   <div class="wrap">
     <div class="head2 rv">
       <div><span class="kicker">Líderes</span><h2 class="big">Quiénes crearon el lab</h2></div>
-      <p>Curabitur consectetur fringilla nunc a rhoncus. Vivamus faucibus at lectus a fringilla.</p>
     </div>
     <div class="lideres">
       <article class="rv">
-        <div class="retrato v-sage"><div class="tex tex-mesh"></div></div>
-        <h3 class="ph">Nombre y apellido</h3><em>Ingeniera</em>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut
-          imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p>
+        <div class="retrato"><img src="equipo/catalina-alvarado.webp" alt="Catalina Alvarado Rojas" loading="lazy" width="640" height="640"></div>
+        <h3 class="ph">Catalina Alvarado Rojas</h3>
+        <p>Ingeniera Electrónica, con Maestría en Ingeniería Electrónica y Doctorado en Neurociencia.
+          Es profesora de la Facultad de Ingeniería en la Pontificia Universidad Javeriana y directora
+          de la Maestría en Bioingeniería.</p>
       </article>
       <article class="rv">
-        <div class="retrato v-ink"><div class="tex tex-flow"></div></div>
-        <h3 class="ph">Nombre y apellido</h3><em>Médico</em>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tempus eros, ut
-          imperdiet orci. Morbi eu nibh at elit tristique pellentesque quis nec odio.</p>
+        <div class="retrato"><img src="equipo/danilo-garcia.webp" alt="Danilo García Orjuela" loading="lazy" width="640" height="640"></div>
+        <h3 class="ph">Danilo García Orjuela</h3>
+        <p>Médico, con Maestría en Morfología y Doctorado en Neurociencia. Es profesor de la Facultad
+          de Medicina en la Universidad Nacional de Colombia.</p>
       </article>
     </div>
   </div>
@@ -341,15 +346,17 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
   <div class="wrap">
     <div class="rv" style="margin-bottom:clamp(30px,4vw,56px)">
       <span class="kicker">Colaboradores</span>
-      <h2 class="big">Lorem ipsum dolor sit amet, consectetur</h2>
     </div>
     <div class="colabs rv">
-      <article><div class="circ"><div class="tex tex-mesh"></div><span>Colaborador</span></div>
-        <p>Curabitur consectetur fringilla nunc a rhoncus. Vivamus faucibus at lectus.</p></article>
-      <article><div class="circ"><div class="tex tex-mesh"></div><span>Colaborador</span></div>
-        <p>Curabitur consectetur fringilla nunc a rhoncus. Vivamus faucibus at lectus.</p></article>
-      <article><div class="circ"><div class="tex tex-mesh"></div><span>Colaborador</span></div>
-        <p>Curabitur consectetur fringilla nunc a rhoncus. Vivamus faucibus at lectus.</p></article>
+      <article><div class="circ"><img src="equipo/camilo-martinez.webp" alt="Camilo Martínez Ríos" loading="lazy" width="640" height="640"></div>
+        <h3>Camilo Martínez Ríos</h3>
+        <p>Performer y docente de danza en la Javeriana, parte del equipo artístico.</p></article>
+      <article><div class="circ"><img src="equipo/hazel-torres.webp" alt="Hazel Torres Matarrita" loading="lazy" width="640" height="640"></div>
+        <h3>Hazel Torres Matarrita</h3>
+        <p>Directora artística y bailarina, responsable de la puesta en escena.</p></article>
+      <article><div class="circ"><img src="equipo/maria-andrea-moreno.webp" alt="María Andrea Moreno" loading="lazy" width="640" height="640"></div>
+        <h3>María Andrea Moreno</h3>
+        <p>Médica, bioeticista e investigadora.</p></article>
     </div>
   </div>
 </section>
@@ -358,7 +365,7 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
   <div class="wrap">
     <div class="rv" style="margin-bottom:clamp(24px,3vw,40px)">
       <span class="kicker">Histórico</span>
-      <h2 class="big">Línea del tiempo · 2020—2026</h2>
+      <h2 class="big">Línea del tiempo · 2024—2026</h2>
     </div>
     <div class="tl-scroll rv">
       <div class="tl" id="tl">
@@ -381,8 +388,8 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
         qué quieres hacer sentir y buscamos juntos la forma.</p>
     </div>
     <div class="contact rv">
-      <a href="mailto:hola@meanlab.co">hola@meanlab.co</a>
-      <a href="https://instagram.com">@meanlab</a>
+      <a href="mailto:meancolectivo@gmail.com">meancolectivo@gmail.com</a>
+      <a href="https://www.instagram.com/lab_mean/" target="_blank" rel="noopener">@lab_mean</a>
     </div>
   </div>
   <div class="wrap">
@@ -417,14 +424,25 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
     if(!hilo||!hilo.getTotalLength||!caja.offsetWidth)return;
     var L=hilo.getTotalLength(),W=caja.clientWidth,H=caja.clientHeight;
     var terms=caja.querySelectorAll('.term'),dots=caja.querySelectorAll('.punto');
+    var margenX=48, margenLado=44, gapMin=44, prevBottom=null;
     terms.forEach(function(el,i){
       var p=hilo.getPointAtLength(L*parseFloat(el.dataset.t));
       var x=p.x/1000*W, y=p.y/900*H;
+      var top=y+24;
+      if(prevBottom!==null && top<prevBottom+gapMin){top=prevBottom+gapMin;}
+      var dx=parseFloat(el.dataset.dx)||0, dy=parseFloat(el.dataset.dy)||0;
+      top+=dy;
       dots[i].style.left=x+'px';dots[i].style.top=y+'px';
-      el.style.top=(y+22)+'px';
-      if(el.dataset.lado==='der'){el.style.left=Math.min(x-34,W-el.offsetWidth)+'px';el.style.right='auto';}
-      else{el.style.left=Math.max(0,x-el.offsetWidth+34)+'px';el.style.right='auto';}
+      el.style.top=top+'px';
+      if(el.dataset.lado==='der'){el.style.left=(Math.min(x+margenX,W-el.offsetWidth-margenLado)+dx)+'px';el.style.right='auto';}
+      else{el.style.left=(Math.max(margenLado,x-el.offsetWidth-margenX)+dx)+'px';el.style.right='auto';}
+      prevBottom=top+el.offsetHeight;
     });
+    var ini=document.getElementById('iconoInicio'),fin=document.getElementById('iconoFin');
+    if(ini){var p0=hilo.getPointAtLength(0);
+      ini.style.left=(p0.x/1000*W)+'px';ini.style.top=(p0.y/900*H)+'px';}
+    if(fin){var p1=hilo.getPointAtLength(L);
+      fin.style.left=(p1.x/1000*W)+'px';fin.style.top=(p1.y/900*H)+'px';}
   }
   if(hilo){
     colocar();addEventListener('resize',colocar);
@@ -444,13 +462,13 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
   }
 
   var EV=[
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'},
-    {m:'Mes año',t:'Nombre del proyecto',l:'Lugar o nombre del evento',n:'Descripción breve del hito'}
+    {m:'Marzo 2024',t:'Dancing your Brain',l:'Semana del Cerebro · Javeriana',n:'Primera aparición pública'},
+    {m:'Julio 2024',t:'Co-incidir',l:'Sala STEAM · UNAL',n:'Estreno del performance'},
+    {m:'Oct 2024',t:'IN/CORPO/DATA',l:'Planetario Bogotá',n:'Desarrollo biosensor EEG · ECG · EMG de bajo costo'},
+    {m:'Nov 2024',t:'Co-incidir',l:'Hospital San Juan de Dios · Minculturas',n:'Salida del circuito académico'},
+    {m:'Mayo 2025',t:'Co-incidir',l:'III Simposio Neuromúsica · Uniandes',n:'Consolidación en el campo científico'},
+    {m:'Agosto 2025',t:'Espacios Sonoros',l:'AECTech Summit · Neuroarquitectura',n:'Nueva obra, nuevo territorio'},
+    {m:'Mar 2026',t:'Conexiones desde el movimiento',l:'Maloka',n:'Nuevo performance'}
   ];
   var tl=document.getElementById('tl'),VW=1400,VH=300,TOP=150,x0=150,dx=183,amp=105;
   function cy(x){return 150-amp*Math.cos(Math.PI*(x-x0)/dx);}
