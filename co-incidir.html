@@ -277,17 +277,24 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
 </section>
 
 <section class="coin dark">
-  <div class="tex tex-terrain" style="background:var(--coral);opacity:.22;height:100%;top:0"></div>
-  <div class="fila">
+  <div class="tex tex-terrain" style="background:var(--ink);opacity:.22;height:100%;top:0"></div>
+    <div class="fila">
+    <!-- Primera columna: texto y contacto -->
     <div class="rv">
-      <span class="kicker">Co-incidir</span>
-      <h2>Trae una pregunta.<br><span class="out">Nosotros ponemos</span><br>los instrumentos.</h2>
-      <p>Trabajamos con artistas, investigadoras, docentes y curiosos. Cuéntanos qué quieres medir o
-        qué quieres hacer sentir y buscamos juntos la forma.</p>
+      <span class="kicker">Contacto</span>
+      <h2>Contáctanos</h2>
+      <p style="font-size: 1.15rem; line-height: 1.6; font-weight: normal; margin-top: 16px; margin-bottom: 34px;">
+        Colaboramos con artistas, médicos, investigadores, profesores, estudiantes y curiosos.</p>
+      <div class="contact">
+        <a href="mailto:meancolectivo@gmail.com">meancolectivo@gmail.com</a>
+        <a href="https://www.instagram.com/lab_mean/" target="_blank" rel="noopener">@lab_mean</a>
+      </div>
     </div>
-    <div class="contact rv">
-      <a href="mailto:meancolectivo@gmail.com">meancolectivo@gmail.com</a>
-      <a href="https://www.instagram.com/lab_mean/" target="_blank" rel="noopener">@lab_mean</a>
+      <!-- Segunda columna: logos institucionales -->
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;">
+     <img src="img/logos-colaboradores/javeriana-ingenieria.webp" alt="" aria-hidden="true" width="417" height="104" 
+       style="--h:52px; "filter: brightness(0) saturate(100%) invert(12%) sepia(35%) saturate(1800%) hue-rotate(185deg) brightness(85%) contrast(110%); draggable="false">
+     <img src="img/logos-colaboradores/unal.webp" alt="" aria-hidden="true" width="300" height="104" style="--h:52px" draggable="false">
     </div>
   </div>
   <div class="wrap">
@@ -297,8 +304,7 @@ h2.big{font-size:clamp(28px,3.6vw,44px);max-width:24ch}
         Diseño web/móvil y desarrollo, Centro Ático, Pontificia Universidad Javeriana<br>
         © 2026
       </div>
-  </div>
-</section>
+  </div></section>
 </main>
 <script>
 (function(){
